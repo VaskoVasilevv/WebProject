@@ -1,0 +1,49 @@
+cloudinary:
+  api-key: 795466465457257
+  api-secret: KlDp9JF0mllP291oSsycj_azq8I
+  cloud-name: deqe5xzwy
+
+
+spring:
+
+  datasource:
+    #    driverClassName: com.mysql.cj.jdbc.Driver
+    driver-class-name: org.postgresql.Driver
+    url: ${JDBC_DATABASE_URL}
+    username: ${JDBC_DATABASE_USERNAME}
+    password: ${JDBC_DATABASE_PASSWORD}
+
+
+
+
+  #    url: jdbc:mysql://localhost:3306/car_dealer_project?useSSL=false&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true&serverTimezone=UTC
+  #    username: root
+  #    password: 12345
+
+  servlet:
+    multipart:
+      max-file-size: 30MB
+      max-request-size: 30MB
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+
+  jpa:
+#    database-platform: org.hibernate.dialect.MySQL8Dialect
+
+    #For PostgreSQL
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+
+#server:
+#  port : 8080
+server.port: ${PORT:8080}
+
+
