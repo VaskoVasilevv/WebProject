@@ -89,7 +89,7 @@ public class UserController extends BaseController {
         return super.view("users/edit-profile", modelAndView);
     }
 
-    @PostMapping("/edit-profile")
+    @PatchMapping("/edit-profile")
     @PreAuthorize("isAuthenticated()")
     @PageTitle("Edit Profile")
     public ModelAndView editProfileConfirm(ModelAndView modelAndView, @ModelAttribute(name = "model") UserEditViewModel model, BindingResult bindingResult) {

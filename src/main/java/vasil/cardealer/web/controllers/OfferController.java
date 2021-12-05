@@ -86,7 +86,7 @@ public class OfferController extends BaseController {
         return super.view("offers/delete-offer", modelAndView);
     }
 
-    @PostMapping("/delete-offer/{id}")
+    @PatchMapping("/delete-offer/{id}")
     @PageTitle("Delete Offer")
     public ModelAndView deleteOfferConfirm(@PathVariable String id) {
         this.offerService.deleteOffer(id);
@@ -106,7 +106,7 @@ public class OfferController extends BaseController {
         return super.view("offers/edit-offer", modelAndView);
     }
 
-    @PostMapping("/edit-offer/{id}")
+    @PatchMapping("/edit-offer/{id}")
     @PageTitle("Edit Offer")
     public ModelAndView editOfferConfirm(@PathVariable String id, @ModelAttribute OfferViewModel model) {
         this.offerService.editOffer(id, this.modelMapper.map(model, OfferServiceModel.class));

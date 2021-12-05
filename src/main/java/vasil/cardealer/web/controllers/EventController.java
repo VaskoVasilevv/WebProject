@@ -85,7 +85,7 @@ public class EventController extends BaseController {
         return super.view("events/edit-events", modelAndView);
     }
 
-    @PostMapping("/edit-events/{id}")
+    @PatchMapping("/edit-events/{id}")
     @PageTitle("Edit Event")
     public ModelAndView editEventConfirm(@PathVariable String id, @ModelAttribute EventViewModel model) {
 
@@ -106,7 +106,7 @@ public class EventController extends BaseController {
         return super.view("events/delete-events", modelAndView);
     }
 
-    @PostMapping("/delete-events/{id}")
+    @PatchMapping("/delete-events/{id}")
     @PageTitle("Delete Event")
     public ModelAndView deleteEventConfirm(@PathVariable String id) {
         this.eventService.deleteEvent(id);

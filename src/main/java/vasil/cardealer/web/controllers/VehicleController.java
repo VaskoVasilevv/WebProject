@@ -96,7 +96,7 @@ public class VehicleController extends BaseController {
         return super.view("vehicles/delete-vehicle", modelAndView);
     }
 
-    @PostMapping("/delete-vehicle/{id}")
+    @PatchMapping("/delete-vehicle/{id}")
     @PreAuthorize("isAuthenticated()")
     @PageTitle("Delete Vehicle")
     public ModelAndView deleteVehicleConfirm(@PathVariable String id) throws Exception {
@@ -118,7 +118,7 @@ public class VehicleController extends BaseController {
         return super.view("vehicles/edit-vehicle", modelAndView);
     }
 
-    @PostMapping("/edit-vehicle/{id}")
+    @PatchMapping("/edit-vehicle/{id}")
     @PageTitle("Edit Vehicle")
     public ModelAndView editVehicleConfirm(@PathVariable String id, @ModelAttribute VehicleViewModel model) {
         this.vehicleService.editVehicle(id, this.modelMapper.map(model, VehicleAddServiceModel.class));
